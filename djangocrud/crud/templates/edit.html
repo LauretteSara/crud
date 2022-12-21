@@ -1,0 +1,64 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+    {% load static %}  
+    <link rel="stylesheet" href="{% static 'style/style.css' %}"/>  
+    <link href="{% static 'dist/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>  
+<body>  
+  <form method="POST" class="post-form" >  
+          {% csrf_token %}  
+    <div class="container">  
+        <br>  
+      <div class="form-group row">  
+        <label class="col-sm-1 col-form-label"></label>  
+        <div class="col-sm-4">  
+          <h3> Modifier Details</h3>  
+        </div>  
+      </div>  
+      <div class="form-group row">  
+        <label class="col-sm-2 col-form-label">Utilisateur Id:</label>  
+        <div class="col-sm-4">  
+            <input type="text" name="eid" id="id_eid" required maxlength="20" value="{{ utilisateur.id }}"/>  
+        </div>  
+      </div>   
+      <div class="form-group row">  
+        <label class="col-sm-2 col-form-label">Utilisateur Nom:</label>  
+        <div class="col-sm-4">  
+            {{form.nom }} 
+        </div>  
+      </div>  
+      <div class="form-group row">  
+        <label class="col-sm-2 col-form-label">Utilisateur Photo:</label>  
+        <div class="col-sm-4">  
+            {{form.image }} 
+        </div>  
+      </div> 
+      <div class="form-group row">  
+        <label class="col-sm-2 col-form-label">Utilisateur Status :</label>  
+        <div class="col-sm-4">  
+            {{form.status}} 
+        </div>  
+      </div>  
+      <div class="form-group row">  
+        <label class="col-sm-2 col-form-label">Utilisateur Mot de passe :</label>  
+        <div class="col-sm-4">  
+            {{form.mot_de_passe}}
+        </div>  
+      </div>  
+      <div class="form-group row">  
+        <label class="col-sm-1 col-form-label"></label>  
+        <div class="col-sm-4">  
+        <button type="submit" class="btn btn-success"> Modifier </button>  
+        {% comment %} {{form.as_p }} {% endcomment %}
+        </div>  
+      </div>  
+    </div>  
+  </form>  
+
+
+  <script src="{% static 'dist/js/bootstrap.bundle.min.js' %}"></script>
+</body>  
+</html>  
